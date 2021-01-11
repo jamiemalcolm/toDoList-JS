@@ -1,5 +1,49 @@
+body{
+  background-color: #FED9B7;
+}
 
+#form-container{
+  display: grid;
+  grid-template-columns: repeat((3, 1fr));
+  grid-auto-flow: row;
+  gap:20px;
+}
+form{
+  grid-column-start: 2;
+  font-size: 125%;
+  text-align: center;
+  background-color: #0081A7;
+  border-radius: 5px;
+  width: 350px;
+}
+h1{
+  text-align: center;
+}
 
-li{
+.new-list-item{
+  display: grid;
+  grid-template-columns: repeat((3, 2fr));
+  grid-auto-flow: row;
+  gap:20px;
+  font-size: 125%;
+  
+}
+
+.new-list-item > li{
+  margin: 20px;
+  width: 150px;
+  height: fit-content;
+  border-radius: 5px;
+  padding-top: 25px;
+  text-align: center;
+  font-size: x-large;
+  align-content: center;  
   list-style: none;
+}
+
+li.low{
+  background-color: #00AFB9;
+}
+li.high{
+  background-color: #F07167;
 }

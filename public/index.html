@@ -14,18 +14,7 @@
   <div id="app">
     <div id="page-container">
       <h1>Jamie's To Do List!</h1>
-      <div id="list-container">
-        <ul>
-          <div class="new-list-item">
-            <li v-for="(item, i) in items" :class=" item.completed ? 'completed':'not-completed'">
-              <span> {{ item.name }} </span>
-              <span v-if="item.completed"> Done!</span>
-              <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
-            </li>
-          </div>
-        </ul>
-      </div>
-      <div id="for-container">
+      <div id="form-container">
         <form v-on:submit.prevent="saveNewItem">
           <div class="form-item">
             <label for="new_todo">Add A To Do:</label>
@@ -43,6 +32,20 @@
             <input type="submit" value="Save New Item">
           </div>
         </form>
+      </div>
+      <div id="list-container">
+        <ul>
+          <div class="new-list-item">
+            <li v-for="(item, i) in items" :class=" item.priority === 'High Priority' ? 'high':'low'">
+              <span> {{ item.name }} </span>
+              <span>{{ item.priority }}</span>
+              <span v-if="item.completed">
+                Done!
+              </span>
+              <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
+            </li>
+          </div>
+        </ul>
       </div>
     </div>
   </div>
