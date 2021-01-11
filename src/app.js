@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
       'Buy milk',
       'Buy cheese',
       'Clean Room',],
-      newItem: ''
+      newItem: '',
     },
     methods: {
       saveNewItem: function (){
-        this.items.push(this.newItem)
+        this.items.push(this.newItem);
+        this.newItem = '';
       }
     },
     }
