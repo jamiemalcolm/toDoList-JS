@@ -4,13 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoList</title>
+  <link rel="stylesheet" href="./css/style.css" type="">
   <script src="./js/bundle.js"></script>
   <title>Document</title>
 </head>
 
 <body>
   <div id="app">
-
+    <ul>
+      <li v-for="item in items"> {{ item }}</li>
+    </ul>
+    <form>
+      <label for="new_todo">Add A To Do:</label>
+      <input type="text" id="new_todo" v-model="newItem" />
+      <input type="submit" value="Save New Item">
+    </form>
   </div>
 
 </body>

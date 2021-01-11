@@ -3,8 +3,18 @@ import Vue from 'vue';
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: "#app",
-    data: {},
-    methods: {},
+    data: {
+      items :[
+      'Buy milk',
+      'Buy cheese',
+      'Clean Room',],
+      newItem: ''
+    },
+    methods: {
+      saveNewItem: function (){
+        this.items.push(this.newItem)
+      }
+    },
     }
   );
 });
