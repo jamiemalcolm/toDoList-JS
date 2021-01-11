@@ -16,9 +16,10 @@
       <h1>Jamie's To Do List!</h1>
       <div id="list-container">
         <ul>
-          <li v-for="item in items">
+          <li v-for="(item, i) in items">
             <span> {{ item.name }} </span>
-            <span v-if></span>
+            <span v-if="item.completed"> Done!</span>
+            <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
           </li>
         </ul>
       </div>

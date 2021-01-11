@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     methods: {
       saveNewItem: function (){
-        this.items.push({name: this.newItem, priority: this.priority, completed: flase});
+        this.items.push({name: this.newItem, priority: this.priority, completed: false});
         this.newItem = '';
-        this.priority = '';
       },
       markComplete: function (index) {
         this.items[index].completed = true;
