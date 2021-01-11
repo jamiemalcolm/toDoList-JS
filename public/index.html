@@ -16,11 +16,13 @@
       <h1>Jamie's To Do List!</h1>
       <div id="list-container">
         <ul>
-          <li v-for="(item, i) in items">
-            <span> {{ item.name }} </span>
-            <span v-if="item.completed"> Done!</span>
-            <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
-          </li>
+          <div class="new-list-item">
+            <li v-for="(item, i) in items" :class=" item.completed ? 'completed':'not-completed'">
+              <span> {{ item.name }} </span>
+              <span v-if="item.completed"> Done!</span>
+              <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
+            </li>
+          </div>
         </ul>
       </div>
       <div id="for-container">
@@ -37,7 +39,9 @@
             <label for="low-pri">Low Priority</label>
             <input type="radio" id="low-pri" v-model="priority" value="Low Priority">
           </div>
-          <input type="submit" value="Save New Item">
+          <div class="form-item">
+            <input type="submit" value="Save New Item">
+          </div>
         </form>
       </div>
     </div>
