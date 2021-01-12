@@ -29,18 +29,19 @@
             <input type="radio" id="low-pri" v-model="priority" value="Low Priority">
           </div>
           <div class="form-item">
-            <input type="submit" value="Save New Item">
+            <input class="submit" type="submit" value="Save New Item">
           </div>
         </form>
       </div>
       <div id="list-container">
-        <ul>
+        <ul class="list-container">
           <div class="new-list-item">
-            <li v-for="(item, i) in items" :class=" item.priority === 'High Priority' ? 'high':'low'">
+            <li class="rendered-list-item" v-for="(item, i) in items"
+              :class=" item.priority === 'High Priority' ? 'high':'low'">
               <span> {{ item.name }} </span>
               <span>{{ item.priority }}</span>
               <span v-if="item.completed">
-                Done!
+                ✔
               </span>
               <button v-if="!item.completed" v-on:click="markComplete(i)"> Done?</button>
             </li>
